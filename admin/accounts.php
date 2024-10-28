@@ -1,5 +1,13 @@
 <?php
+    require_once '../classes/account.class.php';
     session_start();
+    
+    // Check if the request is made via AJAX
+    if (!(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest')) {
+        // If not an AJAX request, redirect to access denied page
+        header('Location: ../account/access_forbidden.php');
+        exit();
+    }
 /*
     if(isset($_SESSION['account'])){
         if(!$_SESSION['account']['is_staff']){
@@ -8,6 +16,8 @@
     }else{
         header('location: login.php');
     }*/
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +35,7 @@
     </style>
 </head>
 <body>
-    <a href="addproduct.php">Add Product</a>
+    <a href="addaccount.php">Add account</a>
     
     <?php
         require_once '../classes/account.class.php';

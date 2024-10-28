@@ -41,6 +41,9 @@ $accountObj = new Account();
                                 </div>
                             </form>
                         </div>
+                        <div class="page-title-right d-flex align-items-center"> 
+                            <a id="add-product" href="#" class="btn btn-primary brand-bg-color">Add Account</a>
+                        </div>
                     </div>
                     
                     <div class="table-responsive">
